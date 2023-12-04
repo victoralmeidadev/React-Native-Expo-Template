@@ -7,3 +7,7 @@ Configurado:
 - Jest
 - React Native Testing Library
 - React Navigation
+
+Como usar:
+
+npx create-expo-app my-app --template @victoralmeidadev/expo-template
