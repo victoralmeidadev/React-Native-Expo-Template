@@ -53,5 +53,9 @@
   "jest": {
     "preset": "jest-expo"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false
 }
