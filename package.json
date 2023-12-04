@@ -1,7 +1,7 @@
 {
   "name": "@victoralmeidadev/expo-template",
   "description": "Template for Expo projects",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
