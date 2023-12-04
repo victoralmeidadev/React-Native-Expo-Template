@@ -1,8 +1,9 @@
-import React from "react";
-import { StatusBar } from "expo-status-bar";
-import { NavigationContainer } from "@react-navigation/native";
+import React from 'react';
 
-import { MainNavigator } from "./navigation";
+import { NavigationContainer } from '@react-navigation/native';
+import { StatusBar } from 'expo-status-bar';
+
+import { MainNavigator } from './navigation';
 
 export default function App() {
   return (
