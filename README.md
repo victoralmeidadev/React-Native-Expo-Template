@@ -7,3 +7,5 @@ Configurado:
 - Jest
 - React Native Testing Library
 - React Navigation
+- Axios
+- Husky, lint-staged & git-commit-msg-linter
