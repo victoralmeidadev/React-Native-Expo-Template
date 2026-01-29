@@ -1,13 +1,23 @@
 import React from 'react';
-
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { RootStackParamList } from '@src/types/navigation';
+import Home from '@src/screens/Home';
 
-import Home from '../screens/Home';
+const MainStack = createNativeStackNavigator<RootStackParamList>();
 
-const MainStack = createNativeStackNavigator();
-
-export const MainNavigator = () => (
-  <MainStack.Navigator>
-    <MainStack.Screen name="Home" component={Home} />
+export const MainNavigator: React.FC = () => (
+  <MainStack.Navigator
+    screenOptions={{
+      headerShown: true,
+      headerBackTitle: 'Back',
+    }}
+  >
+    <MainStack.Screen
+      name="Home"
+      component={Home}
+      options={{
+        title: 'Home',
+      }}
+    />
   </MainStack.Navigator>
 );
