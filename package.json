@@ -1,7 +1,7 @@
 {
   "name": "@victoralmeidadev/expo-template",
   "description": "Template for Expo projects",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
@@ -23,6 +23,7 @@
     "expo-updates": "~29.0.16",
     "react": "19.1.0",
     "react-native": "0.81.5",
+    "react-native-reanimated": "~4.1.1",
     "react-native-safe-area-context": "~5.6.0",
     "react-native-screens": "~4.16.0"
   },
