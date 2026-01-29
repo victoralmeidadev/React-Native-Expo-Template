@@ -1,17 +1,24 @@
 import React from 'react';
-
-import { NavigationContainer } from '@react-navigation/native';
+import {
+  NavigationContainer,
+  NavigationContainerRef,
+} from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
+import { MainNavigator } from '@src/navigation';
+import { RootStackParamList } from '@src/types/navigation';
 
-import { MainNavigator } from './navigation';
+export const RootApp: React.FC = () => {
+  const navigationRef =
+    React.useRef<NavigationContainerRef<RootStackParamList>>(null);
 
-export default function App() {
   return (
     <>
       <StatusBar style="auto" />
-      <NavigationContainer>
+      <NavigationContainer ref={navigationRef}>
         <MainNavigator />
       </NavigationContainer>
     </>
   );
-}
+};
+
+export default RootApp;
