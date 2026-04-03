@@ -1,4 +1,5 @@
 import axios, { AxiosError, AxiosInstance, AxiosRequestConfig } from 'axios';
+
 import { Config } from '@src/config/environment';
 import { ApiErrorClass, NetworkErrorClass } from '@src/types/api';
 

@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { render } from '@testing-library/react-native';
+
 import { Home } from '@src/screens/Home';
 
 // Mock navigation
@@ -32,7 +34,9 @@ describe('Home Screen', () => {
       <Home navigation={mockNavigation as any} route={undefined as any} />
     );
 
-    expect(getByText(/SDK 54 with New Architecture enabled/i)).toBeTruthy();
-    expect(getByText(/React Navigation 7/i)).toBeTruthy();
+    expect(
+      getByText(/Expo SDK 55 \(New Architecture by default\)/i)
+    ).toBeTruthy();
+    expect(getByText(/React Navigation 6/i)).toBeTruthy();
   });
 });

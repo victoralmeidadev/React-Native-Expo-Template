@@ -1,9 +1,11 @@
 import React from 'react';
+
 import {
   NavigationContainer,
   NavigationContainerRef,
 } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
+
 import { MainNavigator } from '@src/navigation';
 import { RootStackParamList } from '@src/types/navigation';
 

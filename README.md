@@ -20,3 +20,16 @@ Siga os passos abaixo para criar um novo projeto utilizando este template:
 
 ```bash
 npx create-expo-app my-app --template @victoralmeidadev/expo-template
+```
+
+Recomenda-se **Node.js** na faixa exigida pelo React Native/Expo do template (consulte o [changelog do Expo](https://github.com/expo/expo/blob/main/CHANGELOG.md) e [expo.dev/changelog](https://expo.dev/changelog) para versões atuais).
+
+### EAS Build e Expo Dev Client
+
+1. Instale a [EAS CLI](https://docs.expo.dev/eas/) (`npm i -g eas-cli`) e faça login: `eas login`.
+2. No diretório do app: `eas init` e configure o projeto no [expo.dev](https://expo.dev) (variáveis de ambiente e credenciais de loja ficam no dashboard ou em arquivos locais conforme a documentação).
+3. Para um binário de desenvolvimento com Dev Client: `eas build --profile development --platform android` (e/ou `ios`).
+
+Os perfis de build estão em `eas.json` (`development`, `preview`, `production`). O canal do EAS Update usa o campo `channel` por perfil (sem `releaseChannel` legado).
+
+Para mais detalhes sobre builds locais, TestFlight e fluxos de Dev Client, veja a documentação do projeto em `.agents/skills/expo-dev-client/SKILL.md` (se disponível no repositório clonado).

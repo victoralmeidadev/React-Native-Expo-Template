@@ -1,12 +1,14 @@
 import React from 'react';
+
 import { StyleSheet, Text, View } from 'react-native';
-import { HomeScreenProps } from '@src/types/navigation';
+
 import {
   Colors,
   Spacing,
   Typography,
   BorderRadius,
 } from '@src/constants/theme';
+import { HomeScreenProps } from '@src/types/navigation';
 
 const styles = StyleSheet.create({
   container: {
@@ -36,8 +38,8 @@ export const Home: React.FC<HomeScreenProps> = () => {
     <View style={styles.container}>
       <Text style={styles.title}>Welcome to Expo Template</Text>
       <Text style={styles.subtitle}>
-        SDK 54 with New Architecture enabled{'\n'}
-        React Navigation 7 • TypeScript 5.9
+        Expo SDK 55 (New Architecture by default){'\n'}
+        React Navigation 6 • TypeScript 5.9
       </Text>
     </View>
   );

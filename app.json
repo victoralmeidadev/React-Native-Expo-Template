@@ -12,16 +12,15 @@
       "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": ["**/*"],
+    "experiments": {
+      "reactCompiler": true
+    },
     "plugins": [
       [
         "expo-build-properties",
         {
           "android": {
-            "newArchEnabled": true,
             "hermesEnabled": true
-          },
-          "ios": {
-            "newArchEnabled": true
           }
         }
       ]

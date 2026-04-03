@@ -1,8 +1,29 @@
 import axios from 'axios';
-import { ApiClient, apiClient } from '@src/services/api/client';
-import { ApiErrorClass, NetworkErrorClass } from '@src/types/api';
 
-jest.mock('axios');
+import { ApiClient } from '@src/services/api/client';
+import { ApiErrorClass } from '@src/types/api';
+
+jest.mock('axios', () => {
+  const createMockHttp = () => ({
+    get: jest.fn(),
+    post: jest.fn(),
+    put: jest.fn(),
+    patch: jest.fn(),
+    delete: jest.fn(),
+    interceptors: {
+      request: { use: jest.fn(), eject: jest.fn() },
+      response: { use: jest.fn(), eject: jest.fn() },
+    },
+    defaults: { headers: { common: {} } },
+  });
+  return {
+    __esModule: true,
+    default: {
+      create: jest.fn(() => createMockHttp()),
+      isAxiosError: jest.fn(),
+    },
+  };
+});
 jest.mock('@src/config/environment', () => ({
   Config: {
     apiUrl: 'http://test-api.com',

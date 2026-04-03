@@ -1,5 +1,4 @@
-import { useCallback, useState } from 'react';
-import { ApiErrorClass, NetworkErrorClass } from '@src/types/api';
+import { useCallback, useEffect, useState, type DependencyList } from 'react';
 
 interface UseApiState<T> {
   data: T | null;
@@ -14,7 +13,7 @@ interface UseApiReturn<T> extends UseApiState<T> {
 
 export function useApi<T>(
   apiCall: () => Promise<T>,
-  deps?: React.DependencyList
+  deps?: DependencyList
 ): UseApiReturn<T> {
   const [state, setState] = useState<UseApiState<T>>({
     data: null,
@@ -53,7 +52,7 @@ interface UseFetchReturn<T> extends UseApiState<T> {
 
 export function useFetch<T>(
   apiCall: () => Promise<T>,
-  deps?: React.DependencyList
+  deps?: DependencyList
 ): UseFetchReturn<T> {
   const [state, setState] = useState<UseApiState<T>>({
     data: null,
@@ -76,7 +75,7 @@ export function useFetch<T>(
   );
 
   // Auto-fetch on mount
-  React.useEffect(() => {
+  useEffect(() => {
     refetch();
   }, [refetch]);
 
