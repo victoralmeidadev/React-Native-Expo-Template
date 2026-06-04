@@ -32,7 +32,8 @@ export function useApi<T>(
         setState({ data: null, loading: false, error });
       }
     },
-    deps || [apiCall]
+    // eslint-disable-next-line react-hooks/use-memo
+    deps ?? [apiCall]
   );
 
   const reset = useCallback(() => {
@@ -71,7 +72,8 @@ export function useFetch<T>(
         setState(prev => ({ ...prev, loading: false, error }));
       }
     },
-    deps || [apiCall]
+    // eslint-disable-next-line react-hooks/use-memo
+    deps ?? [apiCall]
   );
 
   // Auto-fetch on mount

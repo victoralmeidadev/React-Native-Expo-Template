@@ -67,7 +67,7 @@ describe('ApiClient', () => {
       const mockAxios = axios as jest.Mocked<typeof axios>;
       const mockError = new Error('Network error');
 
-      mockAxios.isAxiosError = jest.fn().mockReturnValue(false);
+      (mockAxios as any).isAxiosError = jest.fn().mockReturnValue(false);
 
       expect(() => {
         throw mockError;
@@ -81,7 +81,7 @@ describe('ApiClient', () => {
         message: 'Not found',
       };
 
-      mockAxios.isAxiosError = jest.fn().mockReturnValue(true);
+      (mockAxios as any).isAxiosError = jest.fn().mockReturnValue(true);
 
       // Verify error class structure
       expect(ApiErrorClass).toBeDefined();

@@ -34,7 +34,8 @@ const getEnvironmentConfig = (): EnvironmentConfig => {
     return ENV.development;
   }
 
-  const releaseChannel = Constants.expoConfig?.runtimeVersion || 'production';
+  const rv = Constants.expoConfig?.runtimeVersion;
+  const releaseChannel = typeof rv === 'string' ? rv : 'production';
 
   if (releaseChannel.includes('staging')) {
     return ENV.staging;
